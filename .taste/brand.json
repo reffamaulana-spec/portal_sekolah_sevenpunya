@@ -1,0 +1,281 @@
+{
+  "version": 1,
+  "foundation": {
+    "strategy": "extend",
+    "existingAssets": [
+      "siswa/dashboard.css: Plus Jakarta Sans, palet awal ungu/biru, dan override hijau lembut yang ditambahkan kemudian.",
+      "guru/dashboard.css dan admin/dashboard.css: sistem dashboard serupa dengan siswa.",
+      "auth/style.css: gaya halaman masuk yang selaras dengan dashboard.",
+      "siswa/dashboard.php dan guru/dashboard.php: struktur salam, ringkasan, navigasi, tugas, jadwal, nilai, kehadiran, dan panel pengelolaan.",
+      "Nama teks Portal Sekolah dan ikon emoji pada navigasi. Tidak ditemukan logo grafis, font lokal, atau aset gambar dalam proyek."
+    ],
+    "assetActions": [
+      {
+        "asset": "Plus Jakarta Sans yang ditetapkan pada CSS proyek",
+        "action": "preserve",
+        "reason": "Sudah menjadi tipografi antarmuka di dashboard dan login; pertahankan sebagai satu keluarga font untuk konsistensi dan keterbacaan."
+      },
+      {
+        "asset": "Nama Portal Sekolah dan navigasi emoji yang ada",
+        "action": "preserve",
+        "reason": "Elemen identitas yang benar-benar digunakan proyek; jangan menggantinya dengan logo atau sistem ikon baru tanpa aset yang sah."
+      },
+      {
+        "asset": "Palet ungu/biru awal dan override hijau lembut",
+        "action": "evolve",
+        "reason": "Brief mengutamakan kenyamanan mata dan penyegaran, dan override hijau sudah menjadi arah visual terbaru. Rapikan menjadi sistem warna konsisten, pertahankan hijau sebagai aksen berguna."
+      },
+      {
+        "asset": "Kartu ringkasan, panel, sidebar, dan navigasi bawah mobile yang ada",
+        "action": "preserve",
+        "reason": "Sudah mendukung alur dashboard per peran; tingkatkan hierarki dan responsivitas tanpa mengganti pola yang familier."
+      },
+      {
+        "asset": "Foto untuk komposisi referensi hero atau konten",
+        "action": "create",
+        "reason": "Tidak ditemukan gambar proyek yang dapat digunakan. Gunakan foto kontekstual sekolah atau kegiatan belajar setelah aset tersedia; jangan mengambil gambar kantor, kopi, atau subjek yang tidak relevan dari referensi."
+      }
+    ],
+    "lockedDecisions": [
+      "Portal yang didesain adalah aplikasi sekolah yang sudah ada, bukan halaman promosi.",
+      "Siswa dan guru adalah pengguna utama; dashboard admin dan login tetap konsisten.",
+      "Pertahankan alur login peran dan fitur yang telah tersedia.",
+      "Gunakan nama Portal Sekolah; tidak ada logo grafis terverifikasi.",
+      "Plus Jakarta Sans merupakan keluarga font yang telah ditetapkan di CSS proyek.",
+      "Tampilan harus nyaman dilihat, jelas, dan mendukung layar ponsel.",
+      "Referensi yang disediakan adalah acuan komposisi dan kepadatan, bukan identitas konten atau merek."
+    ],
+    "assumptions": [
+      "Penyegaran hijau lembut yang telah ada dianggap arah visual terbaru, tetapi bukan warna merek terkunci karena belum ada token warna yang dinyatakan eksplisit oleh pemilik.",
+      "Gunakan tema terang sebagai standar dashboard. Panel gelap dapat dipakai secara hemat untuk satu area ringkasan yang jelas terpisah, mengikuti referensi bagian layanan gelap, dengan pemeriksaan kontras.",
+      "Foto kontekstual hanya digunakan bila dapat disediakan atau diperoleh secara sah; tanpa foto, prioritaskan struktur antarmuka nyata daripada ilustrasi dekoratif."
+    ]
+  },
+  "creativeDirection": {
+    "summary": "Portal belajar yang tenang dan tertata, dengan kehangatan visual editorial yang dipadukan dengan antarmuka sekolah yang langsung dan mudah dipindai. Ambil komposisi foto penuh dengan navigasi inset sebagai inspirasi pembuka, judul besar sans yang lugas untuk area kerja, dan panel data yang tetap fungsional.",
+    "traits": [
+      {
+        "quality": "Ramah dan membumi",
+        "boundary": "bukan kekanak-kanakan atau ramai dengan ilustrasi dan warna cerah di setiap panel"
+      },
+      {
+        "quality": "Jelas dan editorial",
+        "boundary": "bukan tipografi serif dekoratif yang mengorbankan keterbacaan tabel dan data"
+      },
+      {
+        "quality": "Teratur dan aktif",
+        "boundary": "bukan permukaan kartu seragam yang mengkotakkan semua teks biasa"
+      },
+      {
+        "quality": "Hangat dengan aksen hijau",
+        "boundary": "bukan palet neon atau semua elemen berwarna sama kuat"
+      }
+    ],
+    "productiveTension": "Judul besar dan foto suasana belajar memberi semangat, sedangkan tabel, status tugas, dan kontrol tetap ringkas serta familiar bagi pengguna sekolah.",
+    "signatureDevice": {
+      "description": "Navigasi inset berbentuk kapsul di atas area pembuka yang memakai foto kontekstual, mengikuti komposisi referensi hero Fieldwork; adaptasikan untuk pintasan peran dan hari ini, bukan navigasi pemasaran.",
+      "status": "candidate",
+      "invariants": [
+        "Navigasi tetap kontras dan terbaca di atas latar; gunakan permukaan gelap solid atau overlay cukup bila foto terlalu terang.",
+        "Urutan pintasan dan label tetap konsisten antara desktop dan mobile.",
+        "Di layar kecil, pertahankan identitas teks dan kontrol navigasi yang jelas, tanpa meniru logo referensi.",
+        "Jangan gunakan foto kantor generik sebagai pengganti suasana belajar."
+      ]
+    },
+    "restraint": "Jangan mengulang foto hero, panel gelap, aksen hijau, garis pemisah, atau kartu berwarna sebagai dekorasi di setiap bagian; aksen utama dipakai untuk aksi, fokus, pilihan aktif, dan satu ringkasan penting.",
+    "avoid": [
+      "Logo baru atau tanda yang menyerupai logo referensi.",
+      "Foto kantor, kopi, konsultan, testimoni, atau perangkat VR yang tidak relevan dengan portal sekolah.",
+      "Klaim sekolah, testimoni, prestasi, atau metrik yang tidak tersedia dalam data.",
+      "Memakai banyak warna status sekaligus pada satu kelompok kartu.",
+      "Gradien dekoratif sebagai latar standar setiap panel.",
+      "Membungkus prosa biasa dalam kotak tanpa fungsi interaktif atau perbandingan.",
+      "Animasi yang menunda akses tugas, data, atau kontrol."
+    ]
+  },
+  "colorPalette": [
+    {
+      "name": "Light Canvas",
+      "value": "#E9FAFF",
+      "usage": "Dominant. canvas token in the light theme."
+    },
+    {
+      "name": "Light Surface",
+      "value": "#FBFEFF",
+      "usage": "Dominant. surface token in the light theme."
+    },
+    {
+      "name": "Light Surface alt",
+      "value": "#DAF0F5",
+      "usage": "Supporting. surface alt token in the light theme."
+    },
+    {
+      "name": "Light Text",
+      "value": "#0A1316",
+      "usage": "Semantic. text token in the light theme."
+    },
+    {
+      "name": "Light Text muted",
+      "value": "#444F52",
+      "usage": "Semantic. text muted token in the light theme."
+    },
+    {
+      "name": "Light Divider",
+      "value": "#CADBE0",
+      "usage": "Semantic. divider token in the light theme."
+    },
+    {
+      "name": "Light Control border",
+      "value": "#5A6D72",
+      "usage": "Semantic. control border token in the light theme."
+    },
+    {
+      "name": "Light Accent",
+      "value": "#397A70",
+      "usage": "Sparse accent. accent token in the light theme."
+    },
+    {
+      "name": "Light Accent hover",
+      "value": "#22665C",
+      "usage": "Semantic. accent hover token in the light theme."
+    },
+    {
+      "name": "Light On accent",
+      "value": "#FFFFFF",
+      "usage": "Semantic. on accent token in the light theme."
+    },
+    {
+      "name": "Light Accent text",
+      "value": "#004E45",
+      "usage": "Sparse accent. accent text token in the light theme."
+    },
+    {
+      "name": "Light Focus ring",
+      "value": "#286A61",
+      "usage": "Semantic. focus ring token in the light theme."
+    },
+    {
+      "name": "Dark Canvas",
+      "value": "#010805",
+      "usage": "Dominant. canvas token in the dark theme."
+    },
+    {
+      "name": "Dark Surface",
+      "value": "#07120F",
+      "usage": "Dominant. surface token in the dark theme."
+    },
+    {
+      "name": "Dark Surface alt",
+      "value": "#202C28",
+      "usage": "Supporting. surface alt token in the dark theme."
+    },
+    {
+      "name": "Dark Text",
+      "value": "#E2EFEA",
+      "usage": "Semantic. text token in the dark theme."
+    },
+    {
+      "name": "Dark Text muted",
+      "value": "#95A29E",
+      "usage": "Semantic. text muted token in the dark theme."
+    },
+    {
+      "name": "Dark Divider",
+      "value": "#394642",
+      "usage": "Semantic. divider token in the dark theme."
+    },
+    {
+      "name": "Dark Control border",
+      "value": "#7C8A85",
+      "usage": "Semantic. control border token in the dark theme."
+    },
+    {
+      "name": "Dark Accent",
+      "value": "#79B8A3",
+      "usage": "Sparse accent. accent token in the dark theme."
+    },
+    {
+      "name": "Dark Accent hover",
+      "value": "#8FCEB9",
+      "usage": "Semantic. accent hover token in the dark theme."
+    },
+    {
+      "name": "Dark On accent",
+      "value": "#000000",
+      "usage": "Semantic. on accent token in the dark theme."
+    },
+    {
+      "name": "Dark Accent text",
+      "value": "#75B49F",
+      "usage": "Sparse accent. accent text token in the dark theme."
+    },
+    {
+      "name": "Dark Focus ring",
+      "value": "#6FAD99",
+      "usage": "Semantic. focus ring token in the dark theme."
+    }
+  ],
+  "typefaces": [
+    {
+      "family": "Plus Jakarta Sans",
+      "source": "Font yang sudah ditetapkan pada siswa/dashboard.css, guru/dashboard.css, admin/dashboard.css, dan auth/style.css; pertahankan sebagai keluarga yang sudah menjadi identitas proyek.",
+      "roles": [
+        "semua teks antarmuka",
+        "judul dashboard",
+        "label navigasi",
+        "tabel dan kontrol"
+      ],
+      "weights": [
+        400,
+        500,
+        600,
+        700,
+        800
+      ]
+    }
+  ],
+  "interfaceDirection": "Gunakan ritme jarak dasar 8 px dengan kelompok konten yang diberi ruang 24–40 px; lebar konten utama sekitar 1200 px dan sidebar desktop sekitar 248 px, dengan navigasi bawah pada mobile sesuai struktur yang ada. Beranda memprioritaskan salam, tugas atau jadwal hari ini, lalu ringkasan; halaman kerja lebih padat untuk tabel dan formulir. Gunakan permukaan canvas hijau-abu sangat pucat, permukaan putih, serta satu panel gelap terpilih bila membantu memisahkan ringkasan. Kartu hanya untuk tugas, jadwal, statistik, atau item lain yang koheren. Radius kontrol 10–14 px, panel 16–20 px, dan hero 20–24 px; bayangan lembut dan jarang, gunakan pembatas hanya untuk memisahkan baris data atau daftar. Tombol aksi utama memakai hijau dengan teks kontras, status hover/fokus/terpilih terlihat jelas, kontrol biasa tetap akrab, dan fokus keyboard memakai cincin yang mudah dilihat. Pertahankan ikon emoji yang sudah ada hingga tersedia aset sistem ikon profesional yang benar-benar terpasang.",
+  "imageDirection": {
+    "summary": "Gunakan foto kontekstual yang membantu siswa atau guru memahami suasana dan aktivitas belajar. Foto hanya menjadi media pendukung; data dan aksi tetap tampil sebagai antarmuka HTML yang nyata.",
+    "subjects": [
+      "Siswa sedang belajar atau bekerja bersama dalam lingkungan sekolah yang wajar.",
+      "Guru mendampingi pembelajaran atau menyiapkan materi kelas.",
+      "Ruang belajar yang benar-benar relevan, bila mendukung isi halaman."
+    ],
+    "treatment": "Foto natural dengan cahaya lembut, warna hijau dan netral yang senada, komposisi sederhana dengan ruang untuk teks. Pada desktop, foto hero dapat menjadi bidang lebar dengan teks kiri dan navigasi inset; pada mobile, pertahankan subjek utama di dalam crop vertikal dan susun navigasi serta teks tanpa menutupi aksi. Bagian konten berupa foto menggunakan frame dengan radius konsisten, bukan latar penuh tanpa tujuan.",
+    "avoid": [
+      "Menggunakan aset dari referensi sebagai gambar situs tanpa lisensi atau kecocokan subjek.",
+      "Foto stok yang menggambarkan identitas atau lokasi sekolah tertentu tanpa bukti.",
+      "Gambar yang berfungsi hanya sebagai hiasan dan mengalahkan informasi tugas atau kelas.",
+      "Foto generik sebagai latar tabel atau formulir."
+    ]
+  },
+  "motionDirection": {
+    "summary": "Gerak ringan membantu orientasi dan hubungan antarkonten; semua data tetap langsung tersedia, dan keadaan akhir adalah keadaan default bila JavaScript atau gerak tidak tersedia.",
+    "principles": [
+      "Purpose: mengenalkan area pembuka saat halaman dimuat; trigger: load; affected relationship: navigasi inset muncul dahulu lalu judul dan media dalam bingkai yang sama, tanpa menggeser tata letak; 480–650ms dengan ease-out lembut, jeda antar elemen 70–90ms.",
+      "Purpose: menjelaskan hubungan foto dan teks kontekstual; trigger: kelompok media masuk viewport; affected relationship: foto terungkap dalam frame yang sudah ada sementara teks terkait tetap terbaca; 500–700ms dengan ease-out halus, tanpa blur besar atau perubahan ukuran layout.",
+      "Purpose: membantu pemindaian progres tugas; trigger: item ringkasan mendekati viewport; affected relationship: status dan item terkait hadir berurutan singkat, dengan keseluruhan jeda kurang dari 240ms; 450–600ms dengan ease-out stabil.",
+      "Purpose: mengonfirmasi tindakan langsung; trigger: klik atau keyboard pada tombol dan navigasi; affected relationship: kontrol yang diaktifkan menunjukkan pressed, selected, atau fokus tanpa menyembunyikan konten; 140–200ms dengan ease-out tegas.",
+      "Purpose: menjelaskan buka-tutup detail; trigger: disclosure atau menu diaktifkan; affected relationship: panel terbuka dekat kontrol asal dan mempertahankan alur baca; 180–240ms dengan ease-in-out yang lembut.",
+      "Untuk prefers-reduced-motion, tampilkan keadaan akhir segera, tanpa reveal tertunda; kontrol dan perubahan status tetap tersedia."
+    ],
+    "avoid": [
+      "transition: all",
+      "Entrance dengan scale dari nol.",
+      "Informasi yang hanya terlihat saat hover.",
+      "Scroll-jacking atau animasi berulang ketika pengguna menggulir bolak-balik.",
+      "Menyembunyikan konten sebelum pemicu scroll atau ketika skrip gagal."
+    ]
+  },
+  "voice": {
+    "summary": "Gunakan bahasa Indonesia yang ramah, singkat, dan jelas. Instruksi menjelaskan tindakan berikutnya; status menyebut fakta yang tersedia, seperti tenggat atau kiriman, tanpa menghakimi siswa.",
+    "avoid": [
+      "Nada terlalu formal atau birokratis untuk siswa.",
+      "Pesan yang membuat siswa merasa disalahkan.",
+      "Istilah teknis tanpa penjelasan.",
+      "Klaim prestasi atau hasil yang tidak didukung data.",
+      "Label ambigu seperti tombol tanpa kata kerja yang menjelaskan tindakannya."
+    ]
+  }
+}

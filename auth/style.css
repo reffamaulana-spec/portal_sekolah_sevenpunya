@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif&display=swap');
+
+:root {
+    --latar: #eef0f0;
+    --kertas: #ffffff;
+    --tinta: #06141B;
+    --redup: #4A5C6A;
+    --garis: #d5d9d9;
+    --aksen: #253745;
+    --aksen-gelap: #11212D;
+    --salah: #b42318;
+    --salah-latar: #fef3f2;
+    --ok: #1a7f4b;
+    --ok-latar: #f0faf4;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Instrument Sans', system-ui, sans-serif;
+    background: var(--latar);
+    color: var(--tinta);
+    min-height: 100vh;
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 20px;
+}
+
+.brand {
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 32px;
+}
+
+.panel-kanan { width: 100%; max-width: 380px; }
+.wrap-daftar .panel-kanan { max-width: 480px; }
+
+.form-login {
+    background: var(--kertas);
+    border: 1px solid var(--garis);
+    border-radius: 10px;
+    padding: 32px;
+}
+
+.form-login h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.01em; }
+.sub { color: var(--redup); margin: 4px 0 24px; }
+
+.sukses, .error {
+    font-size: 14px;
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+}
+.sukses { background: var(--ok-latar); color: var(--ok); }
+.error { background: var(--salah-latar); color: var(--salah); }
+
+.grup { margin-bottom: 16px; }
+.grup > label { display: block; font-size: 13px; font-weight: 500; margin-bottom: 6px; }
+
+.kolom { position: relative; }
+.kolom input {
+    width: 100%;
+    font: inherit;
+    color: var(--tinta);
+    background: var(--kertas);
+    border: 1px solid var(--garis);
+    border-radius: 6px;
+    padding: 10px 12px;
+    outline: none;
+}
+.kolom input::placeholder { color: #7d8b93; }
+.kolom input:focus { border-color: var(--aksen); box-shadow: 0 0 0 3px rgba(74, 92, 106, .12); }
+.kolom.salah input { border-color: var(--salah); }
+.ikon { display: none; }
+
+.lihat {
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0;
+    background: none;
+    color: var(--redup);
+    font: inherit;
+    font-size: 13px;
+    padding: 6px 8px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.lihat:hover { color: var(--tinta); }
+.kolom:has(.lihat) input { padding-right: 64px; }
+
+.btn-login {
+    width: 100%;
+    font: inherit;
+    font-weight: 500;
+    color: #fff;
+    background: var(--aksen);
+    border: 0;
+    border-radius: 6px;
+    padding: 11px 16px;
+    margin-top: 8px;
+    cursor: pointer;
+}
+.btn-login:hover { background: var(--aksen-gelap); }
+.btn-login:focus-visible, .lihat:focus-visible, .btn-modal:focus-visible { outline: 2px solid var(--aksen); outline-offset: 2px; }
+
+.daftar { text-align: center; color: var(--redup); font-size: 14px; margin-top: 20px; }
+.daftar a { color: var(--tinta); font-weight: 500; text-underline-offset: 3px; }
+
+@media (max-width: 520px) {
+    .wrap { padding: 32px 16px; justify-content: flex-start; }
+    .form-login { padding: 24px 20px; }
+}
+
+body { background: radial-gradient(700px 420px at 0 0, rgba(74, 92, 106,.10), transparent 70%), radial-gradient(600px 400px at 100% 100%, rgba(74, 92, 106,.07), transparent 70%), var(--latar); }
+.brand::before { content: ''; display: inline-block; width: 10px; height: 10px; margin-right: 8px; border-radius: 3px; background: var(--aksen); transform: rotate(45deg); }
+.form-login { border-radius: 14px; border-color: #d5d9d9; box-shadow: 0 1px 2px rgba(6, 20, 27,.04), 0 12px 32px rgba(74, 92, 106,.08); }
+.form-login h2 { font-size: 22px; }
+.btn-login { box-shadow: 0 1px 2px rgba(74, 92, 106,.3), inset 0 1px 0 rgba(255,255,255,.15); border-radius: 8px; }
+.btn-login:hover { transform: translateY(-1px); }
+.kolom input { border-radius: 8px; }
+.form-login { animation: muncul .35s ease both; }
+@keyframes muncul { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .form-login { animation: none; } }
+
+:root { --malam: #06141B; --malam2: #11212D; --emas: #9BA8AB; --aksen: #253745; --aksen-gelap: #11212D; --serif: 'Instrument Serif', Georgia, serif; }
+body { background: #fff; }
+.wrap { display: grid; grid-template-columns: 1.05fr 1fr; padding: 0; min-height: 100vh; align-items: stretch; justify-content: initial; }
+.panel-kiri { position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; padding: 44px 56px; color: #fff; background: radial-gradient(520px 320px at 100% 0, rgba(155, 168, 171,.22), transparent 70%), radial-gradient(560px 420px at 0 100%, rgba(74, 92, 106,.5), transparent 70%), linear-gradient(160deg, var(--malam2), var(--malam)); }
+.panel-kiri::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 40px 40px; -webkit-mask: linear-gradient(200deg, #000, transparent 60%); mask: linear-gradient(200deg, #000, transparent 60%); pointer-events: none; }
+.panel-kiri > * { position: relative; z-index: 1; }
+.panel-kiri .brand { margin: 0; color: #fff; font-family: var(--serif); font-size: 26px; font-weight: 400; }
+.panel-kiri .brand::before { background: var(--emas); }
+.panel-kiri h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 4.6vw, 64px); line-height: 1.02; letter-spacing: -.015em; max-width: 14ch; }
+.panel-kiri p { margin-top: 18px; max-width: 38ch; color: rgba(255,255,255,.7); font-size: 16px; }
+.panel-kiri small { color: rgba(255,255,255,.5); font-size: 13px; }
+.panel-kanan { margin: auto; padding: 48px 28px; max-width: 440px; }
+.wrap-daftar .panel-kanan { max-width: 500px; }
+.form-login { border: 0; box-shadow: none; padding: 0; background: transparent; animation: none; }
+.form-login h2 { font-family: var(--serif); font-weight: 400; font-size: 38px; letter-spacing: -.01em; line-height: 1.1; }
+.sub { font-size: 15px; margin-bottom: 28px; }
+.kolom input { padding: 12px 14px; border-radius: 10px; background: #f6f7f7; }
+.btn-login { padding: 13px 16px; border-radius: 10px; background: var(--malam2); box-shadow: 0 8px 20px rgba(6, 20, 27,.25); }
+.btn-login:hover { background: var(--aksen-gelap); }
+.chip input:checked + span { background: var(--malam2); border-color: var(--malam2); }
+.kartu-role input:checked + .isi { border-color: var(--malam2); background: #eceeef; }
+@media (max-width: 860px) {
+  .wrap { grid-template-columns: 1fr; }
+  .panel-kiri { padding: 28px 24px 32px; gap: 28px; }
+  .panel-kiri h1 { font-size: 36px; max-width: none; }
+  .panel-kiri p, .panel-kiri small { display: none; }
+  .panel-kanan { padding: 32px 20px 48px; }
+}
+.panel-kiri h1 br { display: none; }

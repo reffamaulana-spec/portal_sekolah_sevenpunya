@@ -1,0 +1,42 @@
+CREATE TABLE IF NOT EXISTS tugas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    judul VARCHAR(150) NOT NULL,
+    mapel VARCHAR(80) NOT NULL DEFAULT '',
+    deadline DATE NOT NULL,
+    prioritas ENUM('rendah','sedang','tinggi') NOT NULL DEFAULT 'sedang',
+    selesai TINYINT(1) NOT NULL DEFAULT 0,
+    dibuat TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    INDEX idx_tugas_user (user_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS jadwal (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    hari VARCHAR(10) NOT NULL,
+    mapel VARCHAR(80) NOT NULL,
+    jam_mulai TIME NOT NULL,
+    jam_selesai TIME NOT NULL,
+    ruang VARCHAR(50) NOT NULL DEFAULT '',
+    INDEX idx_jadwal_user (user_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS catatan (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    judul VARCHAR(100) NOT NULL,
+    isi TEXT NOT NULL,
+    warna VARCHAR(10) NOT NULL DEFAULT 'kuning',
+    dibuat TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    INDEX idx_catatan_user (user_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS nilai (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    mapel VARCHAR(80) NOT NULL,
+    jenis VARCHAR(20) NOT NULL,
+    nilai DECIMAL(5,2) NOT NULL,
+    dibuat TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    INDEX idx_nilai_user (user_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

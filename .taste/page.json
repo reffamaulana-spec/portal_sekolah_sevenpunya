@@ -1,0 +1,572 @@
+{
+  "version": 1,
+  "page": {
+    "title": "Dashboard Portal Sekolah",
+    "route": "/",
+    "description": "Dashboard berbasis peran untuk membantu siswa melihat tugas berikutnya dan guru mengelola kelas."
+  },
+  "architecture": {
+    "contract": "Halaman ini membantu siswa menemukan tugas yang perlu dikerjakan berikutnya, dengan hasil berupa tugas yang dibuka atau dikirim. Dashboard guru memakai kerangka yang sama untuk mencatat kehadiran dan meninjau kiriman. Hasil utama portal adalah tugas siswa terkirim dan kegiatan kelas guru tercatat.",
+    "mode": "operate_monitor",
+    "novelty": "medium",
+    "grid": "Gunakan konten maksimal 1200 px dalam grid 12 kolom, gutter 24 px dan jarak dasar 8 px. Desktop memiliki sidebar sekitar 248 px dan area kerja fleksibel. Mobile memakai navigasi bawah yang sudah sesuai struktur proyek, lalu konten satu kolom dengan padding 16–20 px.",
+    "signatureRule": "Area pembuka memakai komposisi hero Meridian: navigasi inset di atas foto lebar, headline besar di kiri, teks dukungan dan aksi di kiri bawah. Pertahankan ruang foto di sisi kanan pada desktop dan crop vertikal dengan headline, dukungan, dan aksi berurutan pada mobile. Foto harus menggambarkan kegiatan belajar; jangan meniru foto kantor referensi.",
+    "rhythm": "Orientasi singkat di beranda, tugas atau aktivitas hari ini sebagai prioritas, lalu daftar operasional yang lebih padat. Sisipkan jarak besar antar kelompok kerja, sementara baris tabel dan kontrol tetap rapat. Jangan menambah konten promosi atau bagian hanya untuk mengisi ruang."
+  },
+  "navigation": [
+    {
+      "label": "Beranda",
+      "target": "#beranda"
+    },
+    {
+      "label": "Tugas",
+      "target": "#tugas"
+    },
+    {
+      "label": "Jadwal",
+      "target": "#jadwal"
+    },
+    {
+      "label": "Nilai",
+      "target": "#nilai"
+    },
+    {
+      "label": "Kehadiran",
+      "target": "#kehadiran"
+    },
+    {
+      "label": "Catatan",
+      "target": "#catatan"
+    },
+    {
+      "label": "Agenda",
+      "target": "#agenda"
+    },
+    {
+      "label": "Absensi",
+      "target": "#absensi"
+    },
+    {
+      "label": "Siswa",
+      "target": "#siswa"
+    },
+    {
+      "label": "Kiriman",
+      "target": "#kiriman"
+    },
+    {
+      "label": "Pengguna",
+      "target": "#pengguna"
+    },
+    {
+      "label": "Kelas dan mata pelajaran",
+      "target": "#master"
+    }
+  ],
+  "navigationDesign": {
+    "layoutCase": "reference-navigation",
+    "layout": "Pertahankan sidebar portal yang ada. Di desktop, susun logo teks Portal Sekolah dan tautan peran dalam kolom tetap setinggi viewport, dengan item aktif yang mudah dikenali. Pada mobile, gunakan navigasi bawah sesuai struktur proyek. Komposisi kapsul inset pada referensi hero menjadi elemen orientasi beranda, bukan pengganti navigasi tetap.",
+    "behavior": [
+      "Tampilkan hanya tautan yang tersedia bagi peran masuk; sorot bagian aktif dengan warna aksen.",
+      "Pertahankan nama teks Portal Sekolah tanpa logo grafis baru.",
+      "Tautan menu berpindah ke bagian atau halaman peran yang benar dan dapat digunakan dengan keyboard.",
+      "Menu mobile tidak menutupi konten atau tombol kirim tugas."
+    ],
+    "transformation": {
+      "compact": "Navigasi bawah mobile menampilkan enam bagian utama sesuai peran; bagian lain tetap dapat dicapai melalui navigasi peran yang tersedia, tanpa menghapus kemampuan.",
+      "medium": "Sidebar menyempit sesuai ruang; teks label tetap tersedia dan menu tidak menutupi konten.",
+      "expanded": "Sidebar tetap sekitar 248 px dengan label, ikon yang sudah ada, dan status aktif yang jelas."
+    }
+  },
+  "sections": [
+    {
+      "id": "beranda",
+      "layoutFamily": "hero",
+      "layoutCases": [
+        "meridian-01-hero"
+      ],
+      "referenceDirectionId": "meridian-01-hero",
+      "purpose": "Mengenalkan ringkasan personal hari ini dan menyediakan pintasan ke tindakan utama peran.",
+      "userQuestion": "Apa yang perlu saya lakukan lebih dulu hari ini?",
+      "stage": "orient",
+      "dependencies": [],
+      "evidence": [
+        "Dashboard siswa dan guru sudah menampilkan salam personal, ringkasan statistik, dan pintasan ke tugas atau jadwal."
+      ],
+      "copy": {
+        "eyebrow": "Beranda",
+        "heading": "Belajar lebih terarah hari ini",
+        "body": [
+          "Halo, {nama}. Lihat tugas dan jadwalmu, lalu pilih langkah berikutnya."
+        ],
+        "callsToAction": [
+          {
+            "label": "Lihat tugas",
+            "target": "#tugas"
+          },
+          {
+            "label": "Buka jadwal hari ini",
+            "target": "#jadwal"
+          }
+        ]
+      },
+      "layout": "Komposisi mengacu pada referensi desktop 1505×1024: hero foto penuh lebar dengan tinggi sekitar 96% viewport; navigasi inset berada sekitar 24% dari tepi kiri dan 2% dari tepi atas, lebarnya sekitar 52% viewport. Eyebrow dan headline rata kiri mulai sekitar 2.5% dari tepi kiri dan 17% dari atas. Headline mengambil sekitar 58% lebar dan 2 baris. Dukungan dan aksi berada di kiri bawah, sekitar 75% tinggi. Satu foto memenuhi hero, tanpa kartu tambahan. Untuk mobile, ikuti referensi 1024×1536: navigasi gelap inset sekitar 2% margin dan 8% tinggi gambar; headline sekitar 6% margin, 2 baris, mulai di sepertiga atas; dukungan 3 baris dan satu aksi selebar sekitar 50% viewport di bawahnya. Pertahankan foto vertikal di seluruh area dengan ruang gelap atau overlay yang cukup untuk kontras. Ganti foto kantor referensi dengan satu foto belajar yang berlisensi atau tersedia secara lokal.",
+      "motion": {
+        "purpose": "spatial_continuity",
+        "trigger": "load",
+        "behavior": "Tampilkan navigasi terlebih dahulu, lalu headline dan dukungan dari posisi akhir yang berdekatan; foto terlihat melalui frame hero yang sama tanpa mengubah tinggi layout. Jeda item 80 ms.",
+        "durationMs": 560,
+        "easing": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "reducedMotion": "Tampilkan semua elemen pada posisi akhir langsung dan hormati prefers-reduced-motion."
+      },
+      "componentNeeds": [],
+      "assetNeeds": [
+        "hero_school_study_photo"
+      ],
+      "transformation": {
+        "compact": "Pertahankan foto, judul, dukungan, dan kedua aksi; susun berurutan dan biarkan navigasi tetap dapat dipakai.",
+        "medium": "Pertahankan headline kiri dan foto sebagai latar; pendekkan lebar navigasi inset tanpa mengubah urutan aksi.",
+        "expanded": "Gunakan komposisi desktop referensi dengan navigasi inset, headline dua baris di kiri, dan dukungan serta aksi di kiri bawah."
+      }
+    },
+    {
+      "id": "ringkasan_hari_ini",
+      "layoutFamily": "feature",
+      "layoutCases": [
+        "scalient-05-services"
+      ],
+      "referenceDirectionId": "scalient-05-services",
+      "purpose": "Membawa tugas mendesak siswa atau aktivitas penting guru ke perhatian tanpa memerlukan penelusuran menu.",
+      "userQuestion": "Adakah tugas, jadwal, atau kiriman yang perlu saya perhatikan sekarang?",
+      "stage": "qualify",
+      "dependencies": [
+        "beranda"
+      ],
+      "evidence": [
+        "Dashboard siswa menghitung tugas aktif dan tugas mendesak dari tenggat serta status kiriman.",
+        "Dashboard guru menghitung tugas aktif dan catatan kehadiran hari ini dari data aplikasi."
+      ],
+      "copy": {
+        "heading": "Yang perlu diperhatikan",
+        "body": [
+          "Siswa: mulai dari tugas dengan tenggat terdekat. Guru: lanjutkan dari kehadiran kelas atau kiriman yang perlu ditinjau."
+        ],
+        "callsToAction": [
+          {
+            "label": "Buka daftar tugas",
+            "target": "#tugas"
+          },
+          {
+            "label": "Catat kehadiran",
+            "target": "#absensi"
+          }
+        ]
+      },
+      "layout": "Gunakan geometri gelap referensi desktop 1505×1024: judul besar di kiri atas, penjelas dan aksi di kanan atas, kemudian empat unit kerja horizontal di bawah; unit keempat mendapat penekanan permukaan terang seperti kartu terakhir referensi. Isi unit dengan data nyata seperti tenggat terdekat, jadwal hari ini, kiriman belum dinilai, dan agenda aktif; jangan tampilkan statistik yang tidak dihitung dari sistem. Mobile mengikuti referensi 683×2048: judul dan dukungan rata tengah di bagian atas, aksi utama berikutnya, lalu empat unit disusun satu kolom dalam urutan prioritas; kartu terakhir tetap dibedakan dengan permukaan terang, tanpa rotasi. Warna aksen portal dipakai untuk aksi dan status terpilih, bukan untuk mewarnai semua unit.",
+      "motion": {
+        "purpose": "status",
+        "trigger": "scroll_enter",
+        "behavior": "Perkenalkan kelompok item status satu kali saat mendekati viewport, dari pergeseran kecil ke posisi akhir dengan opacity; item berurutan dengan jeda 70 ms, total stagger di bawah 240 ms.",
+        "durationMs": 500,
+        "easing": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "reducedMotion": "Jangan sembunyikan status; tampilkan langsung tanpa reveal saat prefers-reduced-motion aktif."
+      },
+      "componentNeeds": [],
+      "assetNeeds": [],
+      "transformation": {
+        "compact": "Empat informasi tetap tersedia dalam satu kolom; pertahankan urutan berdasarkan urgensi dan gaya kartu terakhir yang ditekankan.",
+        "medium": "Susun empat unit dalam dua kolom jika tiap label dan status tetap terbaca.",
+        "expanded": "Susun empat unit horizontal di bawah judul, penjelas kanan, dan aksi utama sebagaimana referensi."
+      }
+    },
+    {
+      "id": "tugas",
+      "layoutFamily": "feature",
+      "layoutCases": [
+        "ritovex-04-services"
+      ],
+      "referenceDirectionId": "ritovex-04-services",
+      "purpose": "Membantu siswa meninjau tenggat dan mengirim jawaban, serta memberi guru akses ke tugas kelas dan kiriman.",
+      "userQuestion": "Tugas mana yang harus saya buka, kirim, atau periksa?",
+      "stage": "act",
+      "dependencies": [
+        "ringkasan_hari_ini"
+      ],
+      "evidence": [
+        "Dashboard siswa memuat daftar tugas dari guru, tenggat, status kiriman, jawaban, dan nilai tugas.",
+        "Dashboard guru memuat tugas kelas yang diberikan dan data pengumpulan."
+      ],
+      "copy": {
+        "heading": "Tugas kelas",
+        "body": [
+          "Siswa: periksa mata pelajaran, tenggat, dan status kiriman sebelum membuka tugas.",
+          "Guru: pilih tugas untuk melihat jawaban yang masuk dan memberi nilai."
+        ],
+        "callsToAction": [
+          {
+            "label": "Buka tugas",
+            "target": "#kirim_tugas"
+          },
+          {
+            "label": "Buat tugas kelas",
+            "target": "#buat_tugas"
+          },
+          {
+            "label": "Periksa kiriman",
+            "target": "#kiriman"
+          }
+        ]
+      },
+      "layout": "Pertahankan geometri daftar layanan referensi desktop 1453×1071: judul dan dukungan terpusat di atas, lalu empat baris bernomor dengan judul, deskripsi saat aktif, tombol panah di tepi kanan, dan satu area media yang tumpang tindih sekitar kolom tengah. Adaptasikan empat baris menjadi kelompok status tugas, tenggat, jawaban, dan penilaian; jangan memakai nama atau isi komersial. Pada mobile ikuti referensi 944×2048: judul serta dukungan tengah di atas, lalu baris menjadi item bertumpuk dengan deskripsi terbuka dan tombol akses yang tetap tampak di kanan; gunakan pembatas seperti pada referensi. Area media dipakai hanya untuk foto tugas atau materi yang benar-benar relevan, jika tersedia.",
+      "motion": {
+        "purpose": "explanation",
+        "trigger": "scroll_enter",
+        "behavior": "Judul muncul lebih dulu; baris tugas dan media terkait masuk dalam urutan baca dengan pergeseran horizontal kecil menuju posisi akhir, sekali saja. Pertahankan item yang sudah terlihat saat inisialisasi tetap terlihat.",
+        "durationMs": 540,
+        "easing": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "reducedMotion": "Semua baris, deskripsi, dan tombol langsung terbaca tanpa gerak."
+      },
+      "componentNeeds": [],
+      "assetNeeds": [
+        "task_material_photo"
+      ],
+      "transformation": {
+        "compact": "Ubah setiap baris menjadi susunan vertikal, pertahankan deadline, status, deskripsi, dan tombol akses dalam satu item.",
+        "medium": "Tampilkan satu daftar lebar dengan deskripsi yang lebih pendek, status dan aksi tetap satu baris bila cukup ruang.",
+        "expanded": "Gunakan empat baris bernomor, deskripsi pada item aktif, tombol kanan, dan area media tumpang tindih sesuai referensi."
+      }
+    },
+    {
+      "id": "jadwal",
+      "layoutFamily": "how_it_works",
+      "layoutCases": [
+        "fabrica-06-process"
+      ],
+      "referenceDirectionId": "fabrica-06-process",
+      "purpose": "Menunjukkan susunan pelajaran hari ini dan jadwal mingguan yang relevan bagi siswa atau guru.",
+      "userQuestion": "Pelajaran atau kelas apa yang berlangsung berikutnya, dan kapan?",
+      "stage": "evaluate",
+      "dependencies": [
+        "beranda"
+      ],
+      "evidence": [
+        "Dashboard siswa menggabungkan jadwal pribadi dengan jadwal guru untuk kelasnya.",
+        "Dashboard guru memuat jadwal mengajar per hari, waktu, kelas, dan mata pelajaran."
+      ],
+      "copy": {
+        "heading": "Jadwal yang perlu kamu tahu",
+        "body": [
+          "Lihat mata pelajaran, waktu, kelas, dan ruang yang tercatat untuk hari ini."
+        ],
+        "callsToAction": [
+          {
+            "label": "Lihat jadwal lengkap",
+            "target": "#jadwal_lengkap"
+          }
+        ]
+      },
+      "layout": "Ikuti referensi desktop 1505×1024: heading dua baris berada di area tengah atas dengan baris kedua lebih lembut, satu kalimat dukungan di bawahnya, diikuti empat ringkasan tahap horizontal berukuran kompak, lalu satu media lebar yang memenuhi bagian bawah. Adaptasikan ringkasan tahap menjadi jadwal hari ini, jadwal berikutnya, kelas, dan ruang; setiap item tetap memakai data jadwal nyata. Pada mobile, ikuti referensi 783×2048: nama Portal Sekolah dan kontrol menu di atas, dukungan, lalu judul bagian dan empat baris item dengan penanda progres serta waktu; media lebar berada setelah daftar. Jangan menampilkan foto tanaman atau showreel referensi; media harus berupa foto pembelajaran kontekstual bila tersedia, atau hilangkan tanpa mengubah urutan data.",
+      "motion": {
+        "purpose": "spatial_continuity",
+        "trigger": "scroll_enter",
+        "behavior": "Empat item waktu masuk berurutan dengan jeda pendek dan posisi akhir sesuai daftar; bila media tersedia, tampilkan melalui frame lebarnya sendiri tanpa mengubah layout atau menunda jadwal.",
+        "durationMs": 520,
+        "easing": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "reducedMotion": "Jadwal dan media berada dalam keadaan akhir secara langsung."
+      },
+      "componentNeeds": [],
+      "assetNeeds": [
+        "learning_context_photo"
+      ],
+      "transformation": {
+        "compact": "Daftar empat elemen tetap utuh dalam urutan waktu, dengan foto setelah jadwal agar informasi lebih dahulu.",
+        "medium": "Gunakan empat unit dalam dua kolom bila waktu dan kelas tetap mudah dibandingkan.",
+        "expanded": "Tampilkan headline tengah, empat ringkasan horizontal, dan satu area media lebar sesuai referensi."
+      }
+    },
+    {
+      "id": "nilai_kehadiran",
+      "layoutFamily": "social_proof",
+      "layoutCases": [
+        "cipher-security-08-testimonials"
+      ],
+      "referenceDirectionId": "cipher-security-08-testimonials",
+      "purpose": "Membantu siswa dan guru membaca ringkasan hasil penilaian dan kehadiran yang benar-benar tersedia.",
+      "userQuestion": "Bagaimana saya melihat nilai dan catatan kehadiran yang tersimpan?",
+      "stage": "prove",
+      "dependencies": [
+        "jadwal"
+      ],
+      "evidence": [
+        "Dashboard siswa menghitung rata-rata nilai per mata pelajaran dan rekap status kehadiran.",
+        "Dashboard guru menampilkan rekap kehadiran per kelas dan daftar nilai yang diberikan."
+      ],
+      "copy": {
+        "heading": "Nilai dan kehadiran",
+        "body": [
+          "Tinjau nilai per mata pelajaran dan catatan hadir yang tercatat. Guru dapat membuka rekap kelas untuk melihat status kehadiran."
+        ],
+        "callsToAction": [
+          {
+            "label": "Lihat riwayat nilai",
+            "target": "#nilai"
+          },
+          {
+            "label": "Buka rekap kehadiran",
+            "target": "#kehadiran"
+          }
+        ]
+      },
+      "layout": "Pertahankan geometri referensi desktop 1505×1024: heading berposisi tengah di area atas, lalu dua panel besar berdampingan dengan batas jelas dan isi informatif. Ganti kutipan palsu dengan ringkasan data nilai dan kehadiran; jangan menampilkan foto orang, nama fiktif, institusi, atau testimoni. Ambil panel garis dan angka/status sebagai struktur, adaptasikan aksen ke hijau portal dan tema terang agar nyaman dibaca. Pada mobile ikuti referensi 783×2048: heading tengah di atas, lalu dua panel penuh lebar ditumpuk; tiap panel menampilkan ringkasan dan tautan tindakan. Data ringkasan harus berasal dari catatan pengguna, tanpa peringkat atau klaim capaian.",
+      "motion": {
+        "purpose": "status",
+        "trigger": "scroll_enter",
+        "behavior": "Dua panel ringkasan tampil berurutan dari posisi akhir dengan jeda 80 ms; isi metrik tidak dianimasikan atau diubah nilainya.",
+        "durationMs": 480,
+        "easing": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "reducedMotion": "Tampilkan kedua ringkasan langsung tanpa efek masuk."
+      },
+      "componentNeeds": [],
+      "assetNeeds": [],
+      "transformation": {
+        "compact": "Tumpuk dua panel ringkasan; pertahankan setiap angka, label, dan tautan terkait dalam panel asalnya.",
+        "medium": "Gunakan dua kolom bila label dan angka tetap terbaca; hindari scroll horizontal.",
+        "expanded": "Dua panel berdampingan dengan heading tengah, mengikuti komposisi dua panel referensi."
+      }
+    },
+    {
+      "id": "catatan_agenda",
+      "layoutFamily": "about",
+      "layoutCases": [
+        "mitchy-03-about"
+      ],
+      "referenceDirectionId": "mitchy-03-about",
+      "purpose": "Menyediakan akses ke catatan siswa atau guru dan agenda aktif guru tanpa menyisipkan fitur yang tidak didukung data.",
+      "userQuestion": "Di mana saya menemukan catatan belajar atau agenda kelas?",
+      "stage": "continue",
+      "dependencies": [
+        "jadwal"
+      ],
+      "evidence": [
+        "Dashboard siswa memiliki catatan pribadi dan tips belajar.",
+        "Dashboard guru memiliki catatan pribadi dan agenda dengan status selesai."
+      ],
+      "copy": {
+        "heading": "Catatan dan agenda tetap tertata",
+        "body": [
+          "Simpan catatan penting untuk pelajaran atau kelas. Guru dapat meninjau agenda yang belum selesai."
+        ],
+        "callsToAction": [
+          {
+            "label": "Buka catatan",
+            "target": "#catatan"
+          },
+          {
+            "label": "Lihat agenda",
+            "target": "#agenda"
+          }
+        ]
+      },
+      "layout": "Pertahankan geometri referensi desktop 1505×1024: label kecil di kiri atas, heading besar lebar mengambil sekitar 55% sisi kiri dengan lima baris, media kecil satu gambar di kanan atas dengan keterangan langsung di bawahnya, dan empat item logo-rupa di bagian bawah diganti hanya dengan kategori catatan yang memang ada di aplikasi. Pada mobile ikuti referensi 938×2048: label dan heading besar memenuhi lebar atas, satu foto horizontal mengikuti heading, teks dukungan berada langsung setelah foto, lalu kategori catatan tersusun mendatar sesuai komposisi referensi. Karena katalog kategori belum terverifikasi di data, jangan menciptakan kategori atau daftar brand; gunakan hanya tautan Catatan, Agenda, dan Tips yang telah ada, ditempatkan dalam ruang bawah tanpa meniru logo. Jika foto kegiatan belajar tidak tersedia, hilangkan media dan biarkan heading serta teks menjaga hierarki.",
+      "motion": {
+        "purpose": "spatial_continuity",
+        "trigger": "scroll_enter",
+        "behavior": "Foto, bila tersedia, terungkap melalui frame yang ada; teks keterangannya masuk sesudahnya agar hubungan gambar dan penjelasan jelas. Animasi satu kali dan tidak menyembunyikan kontrol.",
+        "durationMs": 600,
+        "easing": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "reducedMotion": "Tampilkan gambar dan teks pada posisi akhir tanpa reveal."
+      },
+      "componentNeeds": [],
+      "assetNeeds": [
+        "classroom_notes_photo"
+      ],
+      "transformation": {
+        "compact": "Heading, foto opsional, dan dukungan tetap dalam urutan yang sama; tautan catatan dan agenda ditumpuk tanpa menghilangkan aksi.",
+        "medium": "Heading dan media tetap berdampingan bila ruang mendukung, dengan keterangan menempel pada media.",
+        "expanded": "Heading besar di kiri, foto dan keterangan di kanan atas, serta tautan kategori yang tersedia di bagian bawah."
+      }
+    },
+    {
+      "id": "operasi_guru_admin",
+      "layoutFamily": "feature",
+      "layoutCases": [
+        "avoora-03-work-4"
+      ],
+      "referenceDirectionId": "avoora-03-work-4",
+      "purpose": "Memberi guru akses operasional ke absensi, siswa, tugas, nilai, dan agenda, serta admin ke pengguna dan master kelas.",
+      "userQuestion": "Bagaimana saya membuka tindakan pengelolaan kelas atau pengguna yang paling sering dipakai?",
+      "stage": "act",
+      "dependencies": [
+        "catatan_agenda"
+      ],
+      "evidence": [
+        "Dashboard guru memiliki bagian absensi, siswa, nilai, jadwal, tugas, agenda, dan catatan.",
+        "Dashboard admin memiliki bagian pengguna, aktivitas, kelas, mata pelajaran, dan akun."
+      ],
+      "copy": {
+        "heading": "Kelola kelas dengan jelas",
+        "body": [
+          "Guru dapat membuka daftar siswa, mengisi kehadiran, dan meninjau tugas kelas. Admin dapat mengelola pengguna, kelas, dan mata pelajaran."
+        ],
+        "callsToAction": [
+          {
+            "label": "Buka absensi",
+            "target": "#absensi"
+          },
+          {
+            "label": "Kelola siswa",
+            "target": "#siswa"
+          },
+          {
+            "label": "Kelola pengguna",
+            "target": "#pengguna"
+          }
+        ]
+      },
+      "layout": "Gunakan komposisi referensi desktop 1600×900: satu bidang media lebar dengan crop dan subjek di tengah-kanan, overlay gelap horizontal di bagian bawah selebar hampir seluruh gambar, label dan judul unit di kiri overlay, detail ringkas di kanan. Media harus berupa suasana kelas yang relevan, bukan portrait orang generik. Pada mobile tidak ada pairing referensi terverifikasi, maka turunkan overlay menjadi panel teks di bagian bawah media, jaga satu kolom dan urutan judul lalu detail dan tindakan. Untuk admin, konten aktual adalah pengguna, kelas, mata pelajaran, dan aktivitas yang tersedia; tautan peran ditampilkan sesuai sesi dan bukan sebagai klaim baru.",
+      "motion": {
+        "purpose": "explanation",
+        "trigger": "scroll_enter",
+        "behavior": "Media terlihat melalui frame yang sama, kemudian overlay informasi masuk dari jarak pendek ke posisi tetap; kontrol di overlay tetap dapat difokuskan sepanjang waktu.",
+        "durationMs": 560,
+        "easing": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "reducedMotion": "Overlay dan teks terlihat langsung; aksi tidak bergantung pada animasi."
+      },
+      "componentNeeds": [],
+      "assetNeeds": [
+        "classroom_management_photo"
+      ],
+      "transformation": {
+        "compact": "Pertahankan frame media dan overlay, pindahkan detail menjadi blok vertikal di bawah gambar bila teks terlalu rapat.",
+        "medium": "Overlay tetap melebar di bawah media dengan judul dan satu aksi utama terlihat.",
+        "expanded": "Gunakan bidang media lebar dan overlay transparan gelap sepanjang bawah sebagaimana referensi."
+      }
+    },
+    {
+      "id": "faq_alur",
+      "layoutFamily": "faq",
+      "layoutCases": [
+        "avoora-10-faq"
+      ],
+      "referenceDirectionId": "avoora-10-faq",
+      "purpose": "Menjelaskan pertanyaan praktis tentang tindakan siswa dan guru menggunakan pola disclosure yang sudah familier.",
+      "userQuestion": "Bagaimana cara memakai tugas, jadwal, dan pencatatan di portal?",
+      "stage": "de_risk",
+      "dependencies": [
+        "tugas",
+        "operasi_guru_admin"
+      ],
+      "evidence": [
+        "Dashboard siswa dan guru menggunakan bagian terpisah untuk tugas, jadwal, absensi, kiriman, dan nilai."
+      ],
+      "copy": {
+        "heading": "Jawaban untuk penggunaan harian",
+        "body": [
+          "Pilih pertanyaan untuk melihat langkah berikutnya."
+        ],
+        "callsToAction": [
+          {
+            "label": "Buka tugas",
+            "target": "#tugas"
+          }
+        ]
+      },
+      "layout": "Ikuti referensi desktop 1505×1024: heading di atas daftar FAQ yang mengambil sekitar dua pertiga lebar, enam baris pertanyaan dengan nomor pendek, pertanyaan tebal, ikon plus di kanan, serta satu media vertikal dan ajakan relevan pada kolom kanan. Jangan memakai gambar VR dari referensi; satu foto kelas kontekstual dapat menggantikannya jika tersedia. Pada mobile ikuti referensi 683×2048: heading rata kiri setelah label kecil, daftar enam pertanyaan lebar penuh dengan pembatas tipis dan disclosure, lalu foto dan aksi setelah seluruh daftar. Isi FAQ: cara membuka dan mengirim tugas, cara memeriksa tenggat, cara melihat jadwal, cara mencatat kehadiran sebagai guru, cara meninjau kiriman, dan lokasi nilai.",
+      "motion": {
+        "purpose": "state_change",
+        "trigger": "press",
+        "behavior": "Saat pertanyaan diaktifkan, jawabannya terbuka tepat di bawah pertanyaan dengan tinggi konten alami; ikon plus beralih ke status terbuka tanpa mengubah urutan baris lain secara tiba-tiba.",
+        "durationMs": 200,
+        "easing": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "reducedMotion": "Disclosure tetap bisa dibuka dan ditutup dengan perubahan langsung tanpa transisi."
+      },
+      "componentNeeds": [],
+      "assetNeeds": [
+        "school_learning_context_photo"
+      ],
+      "transformation": {
+        "compact": "Tumpuk semua enam disclosure dan pindahkan media setelah daftar; pertahankan jawaban di bawah pertanyaan asal.",
+        "medium": "Daftar FAQ mengambil sekitar 65% lebar dan media berada di sisi kanan dengan ajakan di bawahnya.",
+        "expanded": "Gunakan daftar FAQ dua pertiga dan kolom media satu pertiga sesuai komposisi referensi."
+      }
+    },
+    {
+      "id": "tindakan_lanjut",
+      "layoutFamily": "cta",
+      "layoutCases": [
+        "waveyu-10-cta-2"
+      ],
+      "referenceDirectionId": "waveyu-10-cta-2",
+      "purpose": "Mengakhiri alur dengan pintasan utama sesuai peran agar pengguna kembali melakukan tugas paling penting.",
+      "userQuestion": "Apa tindakan utama yang bisa saya lanjutkan sekarang?",
+      "stage": "continue",
+      "dependencies": [
+        "faq_alur"
+      ],
+      "evidence": [
+        "Siswa dapat mengirim jawaban tugas dan guru dapat mencatat kehadiran serta memeriksa kiriman melalui bagian aplikasi."
+      ],
+      "copy": {
+        "heading": "Lanjutkan kegiatanmu",
+        "body": [
+          "Siswa, buka tugas yang belum dikirim. Guru, lanjutkan dengan absensi atau kiriman kelas."
+        ],
+        "callsToAction": [
+          {
+            "label": "Lanjutkan tugas",
+            "target": "#tugas"
+          },
+          {
+            "label": "Buka absensi",
+            "target": "#absensi"
+          }
+        ]
+      },
+      "layout": "Pertahankan komposisi CTA Waveyu desktop 1505×1024: navigasi tipis di atas, foto hero horizontal berbingkai sekitar 92% lebar dan tinggi 60% area, teks dan aksi di tengah di atas gambar; setelahnya mulai konten berikut dengan heading editorial. Untuk halaman dashboard yang bukan pemasaran, ganti dua aksi dengan tindakan peran dan jaga area hero agar tidak mengulang foto awal; bila foto yang sama digunakan, pilih crop lain yang tetap satu subjek dan konteks. Pada mobile ikuti referensi 783×2048: navigasi di atas, foto vertikal dalam frame dengan teks dan satu CTA di area atas gambar, lalu bagian selanjutnya dimulai setelah foto. Bila aset foto tidak tersedia, jangan gunakan ilustrasi dekoratif sebagai pengganti; tampilkan blok tindakan yang lebih ringkas dalam ruang komposisi yang sama.",
+      "motion": {
+        "purpose": "spatial_continuity",
+        "trigger": "scroll_enter",
+        "behavior": "Aksi dan teks masuk dari posisi akhirnya secara singkat saat blok CTA mendekati viewport; foto, jika digunakan, terlihat melalui frame tanpa menggeser konten berikut.",
+        "durationMs": 520,
+        "easing": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "reducedMotion": "CTA dan teks langsung terlihat dan dapat diaktifkan."
+      },
+      "componentNeeds": [],
+      "assetNeeds": [
+        "next_action_learning_photo"
+      ],
+      "transformation": {
+        "compact": "Pertahankan satu CTA utama per peran, foto vertikal jika tersedia, dan pindahkan teks ke blok tepat di atas tombol.",
+        "medium": "Gunakan foto lebar dengan teks serta aksi di atasnya; jadikan navigasi lebih ringkas.",
+        "expanded": "Ikuti susunan navigasi, foto hero lebar, teks dan CTA terpusat, lalu awal bagian berikutnya sebagaimana referensi."
+      }
+    }
+  ],
+  "responsive": [
+    "Pertahankan urutan DOM sesuai urutan membaca dan prioritas tugas; jangan menggunakan visual order untuk mengubah konteks.",
+    "Di mobile, gunakan navigasi bawah yang telah tersedia dalam proyek dan jangan menutupi tombol kirim tugas atau isi disclosure.",
+    "Pertahankan detail inti tugas, tenggat, kelas, status kiriman, dan aksi ketika susunan kolom berubah.",
+    "Gunakan pairing mobile yang tersedia untuk hero, fitur gelap, about, proses, FAQ, CTA, serta footer; referensi feature avoora tidak memiliki tampilan mobile, jadi responsifnya harus menjaga overlay dan urutan konten secara eksplisit.",
+    "Jangan menampilkan foto bila aset relevan belum tersedia. Struktur dan kontrol dashboard tetap lengkap tanpa gambar."
+  ],
+  "interactions": [
+    "Aksi utama hero membawa siswa ke tugas dan jadwal, atau guru ke bagian yang relevan berdasarkan peran.",
+    "Daftar tugas membuka detail dan status kiriman; formulir kirim tetap satu aksi yang dapat dicapai tanpa hover.",
+    "Guru membuka Absensi, memilih tanggal dan kelas sesuai data yang tersedia, lalu mencatat status siswa.",
+    "Tautan navigasi menandai bagian aktif dan tetap dapat diakses dengan keyboard.",
+    "FAQ memakai elemen disclosure yang mengumumkan status buka atau tutup bagi pembaca layar.",
+    "Tenggat, status kiriman, rata-rata nilai, serta kehadiran ditampilkan dari data aplikasi; hindari membuat nilai contoh seolah data pengguna nyata.",
+    "Pengingat tugas atau agenda, bila ditambahkan, harus berasal dari tenggat atau agenda yang tersimpan dan tidak mengklaim adanya push notification."
+  ],
+  "acceptanceCriteria": [
+    "Blueprint mempertahankan tujuan utama portal, halaman dashboard multi-peran, alur login, dan fitur backend yang sudah tersedia.",
+    "Setiap bagian memakai ID referensi tepat dari deck serta komposisi desktop dan mobile yang dirujuk; tidak ada konten referensi komersial yang disalin sebagai fakta sekolah.",
+    "Hero, ringkasan tugas, dan bagian operasional menjaga aksi prioritas dan informasi inti pada desktop serta mobile.",
+    "Warna aksen hijau dipakai untuk aksi utama, fokus keyboard, pilihan aktif, dan satu perlakuan berulang pada ringkasan, tidak menyebar ke semua kartu.",
+    "Tidak ada testimoni, nama pengguna fiktif, prestasi, metrik, atau kemampuan portal yang tidak didukung bukti proyek.",
+    "Konten tugas, jadwal, nilai, kehadiran, dan kiriman tetap berupa antarmuka HTML nyata, bukan tangkapan layar produk.",
+    "Reveal hero terjadi saat load; sedikitnya dua reveal scroll berbeda berjalan satu kali, mempertahankan visibilitas ketika scroll cepat atau pemuatan ulang pada posisi tengah; gerak dikurangi sesuai prefers-reduced-motion.",
+    "Interaksi navigasi, disclosure, tombol, dan formulir tetap dapat dijalankan dengan keyboard dan status fokus terlihat.",
+    "Tidak ada dependensi komponen baru yang diperlukan; seluruh komposisi menggunakan HTML dan CSS native."
+  ]
+}

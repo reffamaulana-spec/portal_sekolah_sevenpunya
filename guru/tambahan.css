@@ -1,0 +1,370 @@
+.cari {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+}
+
+.cari .input { padding-left: 46px; }
+
+.cari span {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.05rem;
+    pointer-events: none;
+}
+
+.bar-alat {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.avatar-kecil {
+    flex: none;
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    font-size: .95rem;
+    font-weight: 800;
+    color: #fff;
+    background: linear-gradient(135deg, var(--ungu), var(--biru));
+    border-radius: 50%;
+}
+
+.avatar-kecil.v-pink   { background: linear-gradient(135deg, #ff5fa2, #ff9a6b); }
+.avatar-kecil.v-hijau  { background: linear-gradient(135deg, #22c58b, #2f7bff); }
+.avatar-kecil.v-kuning { background: linear-gradient(135deg, #ffb020, #ff5fa2); }
+
+.siswa-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 14px;
+}
+
+.kartu-siswa {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    background: #fff;
+    border: 1.5px solid var(--garis);
+    border-radius: 20px;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.kartu-siswa:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(77, 47, 209, .12);
+}
+
+.kartu-siswa.sembunyi { display: none; }
+
+.kartu-siswa .isi small {
+    overflow: hidden;
+    font-size: .72rem;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--teks-lembut);
+}
+
+.absen-atas {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.tgl-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tgl-form .input { width: auto; }
+
+.tgl-label {
+    padding: 6px 14px;
+    font-size: .78rem;
+    font-weight: 800;
+    color: var(--ungu);
+    background: #ece6ff;
+    border-radius: 999px;
+}
+
+.absen-daftar {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.absen-baris {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 14px;
+    background: var(--latar);
+    border-radius: 18px;
+}
+
+.absen-baris .isi { min-width: 140px; }
+
+.status-pilih {
+    display: flex;
+    gap: 6px;
+}
+
+.status-pilih label {
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+}
+
+.status-pilih input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.status-pilih span {
+    display: grid;
+    place-items: center;
+    min-width: 64px;
+    padding: 9px 12px;
+    font-size: .76rem;
+    font-weight: 800;
+    color: var(--teks-lembut);
+    background: #fff;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    transition: all .2s ease;
+}
+
+.status-pilih label:hover span { border-color: var(--garis); }
+
+.status-pilih input:focus-visible + span {
+    outline: 3px solid rgba(108, 76, 241, .45);
+    outline-offset: 2px;
+}
+
+.status-pilih .s-h input:checked + span { color: #fff; background: linear-gradient(135deg, #22c58b, #12b886); box-shadow: 0 8px 16px rgba(34, 197, 139, .35); }
+.status-pilih .s-i input:checked + span { color: #fff; background: linear-gradient(135deg, #2f7bff, #6ea8ff); box-shadow: 0 8px 16px rgba(47, 123, 255, .35); }
+.status-pilih .s-s input:checked + span { color: #fff; background: linear-gradient(135deg, #ffb020, #ffd04a); box-shadow: 0 8px 16px rgba(255, 176, 32, .35); }
+.status-pilih .s-a input:checked + span { color: #fff; background: linear-gradient(135deg, #ff4f7b, #ff8aa5); box-shadow: 0 8px 16px rgba(255, 79, 123, .35); }
+
+.rekap-daftar {
+    display: grid;
+    gap: 10px;
+}
+
+.rekap-baris {
+    display: grid;
+    grid-template-columns: minmax(120px, 1.3fr) auto minmax(110px, 1fr);
+    align-items: center;
+    gap: 14px;
+    padding: 12px 14px;
+    background: var(--latar);
+    border-radius: 16px;
+}
+
+.rekap-baris .bar { margin: 0; }
+
+.rekap-baris > b {
+    overflow: hidden;
+    font-size: .9rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.rekap-chips {
+    display: flex;
+    gap: 6px;
+}
+
+.rc {
+    padding: 4px 10px;
+    font-size: .7rem;
+    font-weight: 800;
+    border-radius: 999px;
+}
+
+.rc-h { color: #12805c; background: #d9f6e9; }
+.rc-i { color: #2f5fd0; background: #dfeaff; }
+.rc-s { color: #b9770a; background: #fff1d6; }
+.rc-a { color: #d2305c; background: #ffe3ea; }
+
+.persen-hadir {
+    display: grid;
+    gap: 4px;
+}
+
+.persen-hadir small {
+    font-size: .7rem;
+    font-weight: 800;
+    color: var(--teks-lembut);
+}
+
+.kat-mengajar     { color: #4d2fd1; background: #ece6ff; }
+.kat-rapat        { color: #2f5fd0; background: #e3ecff; }
+.kat-koreksi      { color: #b9770a; background: #fff1d6; }
+.kat-administrasi { color: #d2305c; background: #ffe3ee; }
+
+.p-admin { color: #d2305c; background: #ffe3ee; }
+.p-guru  { color: #4d2fd1; background: #ece6ff; }
+.p-murid { color: #12805c; background: #dff7ec; }
+
+.user-baris {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    background: #fff;
+    border: 1.5px solid var(--garis);
+    border-radius: 18px;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.user-baris:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(77, 47, 209, .12);
+}
+
+.user-baris.sembunyi { display: none; }
+
+.saya {
+    margin-left: 6px;
+    padding: 2px 8px;
+    font-size: .62rem;
+    font-style: normal;
+    font-weight: 800;
+    color: #fff;
+    background: var(--ungu);
+    border-radius: 999px;
+}
+
+.aksi-user {
+    display: flex;
+    gap: 6px;
+}
+
+.aksi-user form { margin: 0; }
+
+.ikon-btn {
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    font-size: .95rem;
+    color: var(--teks-lembut);
+    cursor: pointer;
+    background: var(--latar);
+    border: none;
+    border-radius: 12px;
+    transition: all .2s ease;
+}
+
+.ikon-btn:hover:not([disabled]) { color: var(--ungu); background: #e2d9ff; }
+.ikon-btn.bahaya:hover:not([disabled]) { color: #e0345f; background: #ffe3ea; }
+
+.ikon-btn[disabled] {
+    opacity: .35;
+    cursor: not-allowed;
+}
+
+.kmp {
+    display: grid;
+    gap: 18px;
+}
+
+.kmp-kepala {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: .86rem;
+    font-weight: 800;
+}
+
+.kmp-kepala span { color: var(--teks-lembut); }
+.kmp .bar { margin: 0; }
+
+.bar i.i-ungu  { background: linear-gradient(90deg, #6c4cf1, #2f7bff); }
+.bar i.i-pink  { background: linear-gradient(90deg, #ff5fa2, #ff9a6b); }
+.bar i.i-hijau { background: linear-gradient(90deg, #22c58b, #6ee7b7); }
+
+.log-daftar {
+    display: grid;
+    gap: 10px;
+}
+
+.log-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 14px;
+    background: var(--latar);
+    border-radius: 16px;
+}
+
+.log-ikon {
+    flex: none;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    font-size: 1.1rem;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(77, 47, 209, .1);
+}
+
+.log-item time {
+    flex: none;
+    font-size: .72rem;
+    font-weight: 700;
+    color: var(--teks-lembut);
+}
+
+.modal.form {
+    max-width: 420px;
+    text-align: left;
+}
+
+.modal.form h3,
+.modal.form > p { text-align: center; }
+
+.modal.form .medan { margin-bottom: 18px; }
+
+.cek-cocok {
+    margin-top: 8px;
+    min-height: 16px;
+    font-size: .78rem;
+    font-weight: 700;
+}
+
+.cek-cocok.ya  { color: var(--hijau); }
+.cek-cocok.tdk { color: #e0345f; }
+
+.form-sempit {
+    max-width: 460px;
+}
+
+.form-sempit .medan { margin-bottom: 16px; }
+
+@media (max-width: 900px) {
+    .menu.m4 { grid-template-columns: repeat(4, 1fr); }
+    .user-baris { flex-wrap: wrap; }
+    .rekap-baris { grid-template-columns: 1fr; }
+    .absen-baris { align-items: flex-start; }
+    .status-pilih { width: 100%; }
+    .status-pilih label { flex: 1; }
+    .status-pilih span { min-width: 0; }
+}

@@ -1,0 +1,43 @@
+{
+  "originalRequest": "berkreasilah sekeren dan semenarik mungkin tetapi aku mau tampilan yang ramah di mata dan jika bisa tambahkan fitur baru yang bermanfaat lainya",
+  "subject": "Penyegaran portal sekolah multi-peran untuk kegiatan belajar siswa dan pengelolaan kelas oleh guru.",
+  "pageType": "Dashboard aplikasi web sekolah yang sudah ada, dengan tampilan berbeda untuk siswa, guru, dan admin.",
+  "scope": "Fokus pada dashboard siswa dan guru sebagai pengguna utama, dengan konsistensi visual pada dashboard admin dan halaman masuk. Pertahankan menu, alur, dan fitur yang tersedia. Usulkan fitur tambahan yang praktis dan sesuai konteks portal.",
+  "primaryGoal": "Membuat portal lebih nyaman dibaca dan digunakan sehari-hari, membantu siswa memahami tugas dan jadwal belajar, serta membantu guru mengelola kelas dan kegiatan dengan lebih teratur.",
+  "audience": "Siswa dan guru sebagai pengguna utama; admin sebagai pengguna pendukung.",
+  "offer": "Satu portal sekolah untuk tugas, jadwal, nilai, kehadiran, catatan, agenda, dan pengelolaan pengguna sesuai peran.",
+  "primaryAction": "Siswa meninjau tugas dan jadwal lalu mengirimkan tugas; guru mencatat kehadiran, membagikan tugas, dan memantau kiriman siswa.",
+  "creativeControl": "Kreatif dan menarik tetapi tetap tenang, ramah di mata, teratur, mudah dipahami oleh siswa, dan efisien bagi guru. Gunakan keputusan visual yang sesuai dengan sistem yang sudah ada; hindari membuat halaman promosi pemasaran yang tidak relevan.",
+  "requiredContent": [
+    "Navigasi peran yang jelas untuk beranda, tugas, jadwal, nilai, kehadiran, catatan, agenda, dan fitur terkait.",
+    "Ringkasan beranda yang menyapa pengguna dan menyoroti informasi sekolah yang relevan hari ini.",
+    "Daftar tugas dengan tenggat, status pengerjaan, serta akses untuk melihat atau mengirim jawaban.",
+    "Jadwal pelajaran siswa dan jadwal mengajar guru, dengan informasi hari, waktu, kelas, mata pelajaran, dan ruang jika tersedia.",
+    "Ringkasan nilai dan kehadiran siswa yang membantu mereka memahami progresnya.",
+    "Panel guru untuk pencatatan kehadiran, daftar siswa, tugas kelas, kiriman, nilai, agenda, dan catatan.",
+    "Dashboard admin untuk pengguna, kelas, mata pelajaran, dan aktivitas administrasi yang sudah tersedia.",
+    "Halaman masuk yang konsisten dengan gaya portal dan tetap mudah digunakan.",
+    "Usulan fitur tambahan yang bermanfaat, seperti ringkasan tugas yang mendekati tenggat, pengingat agenda atau jadwal, dan indikator kiriman yang perlu diperiksa guru, sepanjang sesuai data dan kemampuan sistem."
+  ],
+  "constraints": [
+    "Ini adalah penyegaran situs yang sudah ada; jangan mengganti identitas portal atau mengarang fakta sekolah.",
+    "Pertahankan alur login berbasis peran dan fitur backend yang tersedia.",
+    "Prioritaskan keterbacaan, kenyamanan visual, navigasi yang jelas, dan tata letak responsif untuk perangkat seluler.",
+    "Fitur baru harus relevan dan tidak mengklaim fungsi integrasi atau notifikasi yang belum didukung sistem.",
+    "Tidak ada referensi visual eksternal atau aset merek tambahan yang diberikan."
+  ],
+  "brandInputs": [
+    "Sumber: file CSS dashboard siswa, guru, dan admin. Gaya saat ini memakai font Plus Jakarta Sans, palet ungu/biru dengan aksen warna cerah, latar lembut, sidebar navigasi, kartu ringkasan, dan panel konten.",
+    "Sumber: struktur halaman dashboard PHP siswa dan guru. Antarmuka sudah memiliki salam personal, ringkasan statistik, panel tugas/jadwal, dan navigasi per bagian.",
+    "Sumber: file login dan dashboard. Portal memakai nama Portal Sekolah dan ikon emoji; logo grafis khusus tidak teridentifikasi.",
+    "Konteks proyek menunjukkan penyegaran warna hijau lembut dan netral sudah pernah ditambahkan sebagai override CSS; perlakukan sebagai arah visual yang ada, bukan fakta identitas merek yang wajib."
+  ],
+  "assumptions": [
+    "Permintaan terbaru mengarahkan eksplorasi visual yang lebih kreatif, namun tetap mempertahankan kenyamanan mata sebagai batas utama.",
+    "Portal multi-peran yang ada menjadi objek desain, bukan situs baru.",
+    "Usulan fitur tambahan sebaiknya memanfaatkan tugas, jadwal, agenda, kehadiran, dan kiriman yang sudah tercermin dalam proyek, tanpa menjanjikan push notification atau layanan luar.",
+    "Admin tetap tercakup agar penyegaran portal konsisten, meskipun siswa dan guru menjadi prioritas."
+  ],
+  "unresolved": [],
+  "explicitAnswers": []
+}
